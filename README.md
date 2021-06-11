@@ -9,17 +9,18 @@ Steps:
 
 1. Build the image: `docker-compose build`
 2. Execute the container: `docker-compose up -d`
-3. Access to the container: `docker-compose exec openqa bash`
-4. Change user: `su openqa`
-5. Launch the DB and web UI: `~/launch_webui_with_db.sh`
-6. Open in a browser: http://localhost:9526
+3. Execute `./console.sh` To access to the container with openqa user. This script do these steps:
+	- Access to the container: `docker-compose exec openqa bash`
+	- Change user: `su openqa`
+4. Launch the DB and web UI: `~/launch_webui_with_db.sh`
+5. Open in a browser: http://localhost:9526
 
 
 ### Preload a dumped BD
 
 Follow the previous steps since 4 and then continue with:
 
-5. Copy your dump to the container: `docker cp <dump_path> openqa_devel_openqa_1:/home/openqa`
+5. Copy your dump to the container: `docker cp <dump_path> openqa_developers_container_openqa_1:/home/openqa`
 6. Launch the DB `~/launch_db.sh`
 7. This step is only necessary if you need to create roles. Open the postgres console and create the roles:
    - `psql --host=/home/openqa/openQA-dev/db --dbname=openqa_test`
