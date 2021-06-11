@@ -1,7 +1,7 @@
 FROM opensuse/tumbleweed
 
 RUN zypper in -y openQA-devel os-autoinst-distri-opensuse-deps make
-RUN zypper in -y tmux
+RUN zypper in -y tmux vi
 
 RUN useradd -m openqa
 
