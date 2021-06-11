@@ -9,7 +9,11 @@ Steps:
 
 1. Build the image: `docker-compose build`
 2. Execute the container: `docker-compose up -d`
-3. Execute `./console.sh` To access to the container with openqa user. This script do these steps:
+3. Wait until this is healthy `docker-compose ps`
+```
+openqa_developers_container_openqa_1   su openqa /entrypoint.sh   Up (healthy)   0.0.0.0:9526->9526/tcp
+```
+4. Execute `./console.sh` To access to the container with openqa user. This script do these steps:
 	- Access to the container: `docker-compose exec openqa bash`
 	- Change user: `su openqa`
 4. Launch the DB and web UI: `~/launch_webui_with_db.sh`
