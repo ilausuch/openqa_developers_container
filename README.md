@@ -24,7 +24,7 @@ openqa_developers_container_openqa_1   su openqa /entrypoint.sh   Up (healthy)  
 
 Follow the previous steps since 4 and then continue with:
 
-5. Copy your dump to the container: `docker cp <dump_path> openqa_developers_container_openqa_1:/home/openqa`
+5. Copy your dump to the share directory
 6. Launch the DB `~/launch_db.sh`
 7. This step is only necessary if you need to create roles. Open the postgres console and create the roles:
    - `psql --host=/home/openqa/openQA-dev/db --dbname=openqa_test`
@@ -44,6 +44,9 @@ It is possible to add your fork and branches into the web UI application
 4. Change to your branch `git checkout <branch name>`
 5. Reset the web UI
 
+## Features
+
+- Added the share directory to share files between the host and the container
 
 ## Roadmap
 

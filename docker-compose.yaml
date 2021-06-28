@@ -7,6 +7,8 @@ services:
     ports:
       - 9526:9526
     privileged: true
+    volumes:
+      - ./share:/share
     healthcheck:
       test: ["CMD", "[", "-f", "/home/openqa/healthcheck.lock", "]"]
       interval: 20s
